@@ -1,0 +1,14 @@
+[user]
+	name = Balakrishna Avulapati (Bala)
+	email = bavulapati@gmail.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[core]
+	filemode = false
+	autocrlf = false
+	longpaths = true

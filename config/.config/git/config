@@ -4,7 +4,6 @@
 [init]
 	defaultBranch = main
 [credential]
-	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [credential "https://dev.azure.com"]
 	useHttpPath = true
@@ -12,3 +11,12 @@
 	filemode = false
 	autocrlf = false
 	longpaths = true
+  editor = vim
+[diff]
+  tool = vimdiff
+[fetch]
+  prune = true
+[commit]
+  gpgsign = true
+[color]
+  ui = auto

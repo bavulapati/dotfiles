@@ -2,3 +2,5 @@
 
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+# Simplify image preview with icat
+alias icat="kitty +kitten icat"

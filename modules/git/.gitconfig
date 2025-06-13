@@ -1,0 +1,8 @@
+[user]
+	signingkey = 2997AE61E0FB6DA3
+	name = Balakrishna Avulapati
+	email = ba@bavulapati.com
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true

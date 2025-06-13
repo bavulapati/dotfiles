@@ -1,0 +1,101 @@
+##################################################
+# MAIN
+##################################################
+# Theme
+autoload -Uz promptinit
+promptinit
+prompt adam2
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep extendedglob nomatch notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/balakrishna/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+##################################################
+# HOMEBREW
+##################################################
+
+# Make brew available
+eval "$(/opt/homebrew/bin/brew shellenv)"
+ 
+# See https://github.com/drduh/macOS-Security-and-Privacy-Guide/issues/138
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
+# completions
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# Avoid zsh complaining about insecure directory
+chmod go-w "$HOMEBREW_PREFIX/share"
+
+##################################################
+# ALIASES
+##################################################
+
+alias ls="ls --color -F"
+alias ll="ls --color -lh"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+##################################################
+# ShellFuncs
+##################################################
+# -- coloured manuals
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+##################################################
+# cd dir
+##################################################
+# Keep history of `cd` as in with `pushd` and make `cd -<TAB>` work.
+DIRSTACKSIZE=16
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_minus
+
+# Ignore lines prefixed with '#'.
+setopt interactivecomments
+
+# Ignore duplicate in history.
+setopt hist_ignore_dups
+
+# syntax highlighting should be the last line of zshrc file
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+##################################################
+# GPG
+##################################################
+# Set an environment variable to tell GPG the current terminal.
+export GPG_TTY=$(tty)
+# Configure SSH to use GPG
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# start gpg-agent, if it isn't started already
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye > /dev/null
+

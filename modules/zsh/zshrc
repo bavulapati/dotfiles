@@ -42,6 +42,14 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+HOMEBREW_ZSH_SITE_FUNCTIONS="/opt/homebrew/share/zsh/site-functions"
+if [ -d "$HOMEBREW_ZSH_SITE_FUNCTIONS" ]
+then
+  # Avoid zsh complaining about insecure directory
+  chmod -R g-w "$(dirname "$HOMEBREW_ZSH_SITE_FUNCTIONS")"
+  fpath=($fpath "$HOMEBREW_ZSH_SITE_FUNCTIONS")
+fi
+
 # Avoid zsh complaining about insecure directory
 chmod go-w "$HOMEBREW_PREFIX/share"
 

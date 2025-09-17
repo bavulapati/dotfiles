@@ -121,3 +121,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2025-08-13 15:13:01
 export PATH="$PATH:/Users/balakrishna/.local/bin"
+
+# pnpm
+export PNPM_HOME="/Users/balakrishna/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+
+export EDITOR="nvim"

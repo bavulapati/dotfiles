@@ -108,13 +108,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
-# Use llvm
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export CC="/opt/homebrew/opt/llvm/bin/clang"
-export CXX="/opt/homebrew/opt/llvm/bin/clang++"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -132,3 +125,12 @@ esac
 
 
 export EDITOR="nvim"
+
+# Added by Pear Runtime, configures system with Pear CLI
+export PATH="/Users/balakrishna/Library/Application Support/pear/bin":$PATH
+
+# Google Source depot_tools
+export PATH="/Users/balakrishna/source/holepunchto/chromium/depot_tools/":$PATH
+export GIT_CACHE_PATH="/Users/balakrishna/.git_cache/"
+
+. "$HOME/.cargo/env"

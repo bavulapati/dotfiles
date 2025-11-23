@@ -15,6 +15,7 @@ include modules/nvim/targets.mk
 include modules/gnupg/targets.mk
 include modules/git/targets.mk
 include modules/lazygit/targets.mk
+include modules/tmux/targets.mk
 
 .PHONY: all bootstrap help $(MODULES)
 all: bootstrap $(MODULES)

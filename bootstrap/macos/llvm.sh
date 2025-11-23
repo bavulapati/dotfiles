@@ -7,5 +7,5 @@ if [ -x "$(command -v clang-tidy)" ]; then
   exit 0
 fi
 
-HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 \
-  brew install llvm
+# HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1
+# brew install llvm

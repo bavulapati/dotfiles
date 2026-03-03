@@ -1,1 +1,7 @@
 theme = dark:Github-Dark-Default,light:Github-Light-Default
+
+mouse-hide-while-typing = true
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor

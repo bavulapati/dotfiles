@@ -62,6 +62,7 @@ alias ll="ls --color -lh"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias docker="podman"
 
 ##################################################
 # ShellFuncs
@@ -126,6 +127,14 @@ esac
 
 export EDITOR="nvim"
 
+#If you need to have llvm first in your PATH, run:
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+#For compilers to find llvm you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+#For cmake to find llvm you may need to set:
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
+
 # Added by Pear Runtime, configures system with Pear CLI
 export PATH="/Users/balakrishna/Library/Application Support/pear/bin":$PATH
 
@@ -134,3 +143,7 @@ export PATH="/Users/balakrishna/source/holepunchto/chromium/depot_tools/":$PATH
 export GIT_CACHE_PATH="/Users/balakrishna/.git_cache/"
 
 . "$HOME/.cargo/env"
+
+# vcpkg
+export PATH="/Users/balakrishna/source/microsoft/vcpkg/":$PATH
+

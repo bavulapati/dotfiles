@@ -8,9 +8,9 @@ $(DESTINATION)/.gnupg/scdaemon.conf: modules/gnupg/scdaemon.conf | $(DESTINATION
 	$(SYMLINK)
 $(DESTINATION)/Library/LaunchAgents:
 	mkdir -p $@
-$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent.plist: modules/gnupg/gnupg.gpg-agent.plist | $(DESTINATION)/.gnupg/LaunchAgents
+$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent.plist: modules/gnupg/gnupg.gpg-agent.plist | $(DESTINATION)/Library/LaunchAgents
 	$(SYMLINK)
-$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent-symlink.plist: modules/gnupg/gnupg.gpg-agent-symlink.plist | $(DESTINATION)/.gnupg/LaunchAgents/gnupg.gpg-agent.plist
+$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent-symlink.plist: modules/gnupg/gnupg.gpg-agent-symlink.plist | $(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent.plist
 	$(SYMLINK)
 $(DESTINATION)/.ssh:
 	mkdir -p $@
@@ -19,10 +19,13 @@ $(DESTINATION)/.ssh/id_rsa_yubikey.pub: modules/gnupg/id_rsa_yubikey.pub | $(DES
 $(DESTINATION)/.ssh/config: modules/gnupg/ssh.conf | $(DESTINATION)/.ssh/id_rsa_yubikey.pub
 	$(SYMLINK)
 gnupg: \
-	$(DESTINATION)/.gnupg/gpg-agent.conf
-	$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent-symlink.plist
+	$(DESTINATION)/.gnupg/scdaemon.conf \
+	$(DESTINATION)/Library/LaunchAgents/gnupg.gpg-agent-symlink.plist \
 	$(DESTINATION)/.ssh/config
 	chmod 600 ~/.gnupg/*
 	chmod 700 ~/.gnupg
+	chmod 700 ~/.ssh
+	chmod 600 ~/.ssh/id_rsa_yubikey.pub
+	gpgconf --kill gpg-agent
 MODULES += gnupg
 

@@ -1,5 +1,10 @@
 $(DESTINATION)/.gitconfig: modules/git/.gitconfig
 	$(SYMLINK)
-git: $(DESTINATION)/.gitconfig
+$(DESTINATION)/.gitignore: modules/git/.gitignore
+	$(SYMLINK)
+git: \
+	$(DESTINATION)/.gitconfig \
+	$(DESTINATION)/.gitignore
+
 MODULES += git
 

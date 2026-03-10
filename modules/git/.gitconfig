@@ -8,3 +8,5 @@
 	gpgSign = true
 [format]
 	signoff = true
+[core]
+  excludesfile = ~/.gitignore

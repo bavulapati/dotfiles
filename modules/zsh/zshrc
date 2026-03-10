@@ -147,3 +147,4 @@ export GIT_CACHE_PATH="/Users/balakrishna/.git_cache/"
 # vcpkg
 export PATH="/Users/balakrishna/source/microsoft/vcpkg/":$PATH
 
+export PATH="$HOME/.local/bin:$PATH"

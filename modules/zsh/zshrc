@@ -15,7 +15,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/balakrishna/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit && compinit -u
 # compinit
@@ -95,8 +95,6 @@ setopt interactivecomments
 # Ignore duplicate in history.
 setopt hist_ignore_dups
 
-# syntax highlighting should be the last line of zshrc file
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ##################################################
 # GPG
@@ -114,10 +112,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Created by `pipx` on 2025-08-13 15:13:01
-export PATH="$PATH:/Users/balakrishna/.local/bin"
+export PATH="$PATH:~/.local/bin"
 
 # pnpm
-export PNPM_HOME="/Users/balakrishna/Library/pnpm"
+export PNPM_HOME="~/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -136,15 +134,18 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
 
 # Added by Pear Runtime, configures system with Pear CLI
-export PATH="/Users/balakrishna/Library/Application Support/pear/bin":$PATH
+export PATH="~/Library/Application Support/pear/bin":$PATH
 
 # Google Source depot_tools
-export PATH="/Users/balakrishna/source/holepunchto/chromium/depot_tools/":$PATH
-export GIT_CACHE_PATH="/Users/balakrishna/.git_cache/"
+export PATH="~/github/holepunchto/chromium/depot_tools/":$PATH
+export GIT_CACHE_PATH="~/.git_cache/"
 
 # . "$HOME/.cargo/env"
 
 # vcpkg
-export PATH="/Users/balakrishna/source/microsoft/vcpkg/":$PATH
+export PATH="~/github/microsoft/vcpkg/":$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# syntax highlighting should be the last line of zshrc file
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

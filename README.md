@@ -61,3 +61,7 @@ quit
 ## Password Store
 
 - Clone your Password Store to ~/.password-store
+
+## TMUX
+
+- Install tmux plugins using `prefix + I`

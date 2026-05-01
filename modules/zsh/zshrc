@@ -149,3 +149,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # syntax highlighting should be the last line of zshrc file
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#sfw
+
+export SFW_SILENT=true
+alias npm="sfw npm"

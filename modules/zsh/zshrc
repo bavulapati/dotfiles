@@ -155,7 +155,33 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # OpenClaw Completion
 [ -f "$HOME/.openclaw/completions/openclaw.zsh" ] && source "$HOME/.openclaw/completions/openclaw.zsh"
 
-#sfw
-
+# Socket Firewall
+# SOCKET_API_TOKEN is exported from ~/.zshenv, which every zsh sources.
 export SFW_SILENT=true
-alias npm="sfw npm"
+
+# JavaScript/TypeScript
+alias npm='sfw npm'
+alias yarn='sfw yarn'
+alias pnpm='sfw pnpm'
+
+# Python
+alias pip='sfw pip'
+alias pip3='sfw pip3'
+alias uv='sfw uv'
+
+# Rust
+alias cargo='sfw cargo'
+
+# Go
+alias go='sfw go'
+
+# Java/Scala/Kotlin
+alias mvn='sfw mvn'
+alias gradle='sfw gradle'
+
+# Ruby
+alias gem='sfw gem'
+alias bundle='sfw bundle'
+
+# .NET
+alias dotnet='sfw dotnet'

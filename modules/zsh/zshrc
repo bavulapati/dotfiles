@@ -111,11 +111,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Created by `pipx` on 2025-08-13 15:13:01
-export PATH="$PATH:~/.local/bin"
 
 # pnpm
-export PNPM_HOME="~/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -134,16 +132,9 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"
 
 # Added by Pear Runtime, configures system with Pear CLI
-export PATH="~/Library/Application Support/pear/bin":$PATH
-
-# Google Source depot_tools
-export PATH="~/github/holepunchto/chromium/depot_tools/":$PATH
-export GIT_CACHE_PATH="~/.git_cache/"
+export PATH="$HOME/Library/Application Support/pear/bin:$PATH"
 
 # . "$HOME/.cargo/env"
-
-# vcpkg
-export PATH="~/github/microsoft/vcpkg/":$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 

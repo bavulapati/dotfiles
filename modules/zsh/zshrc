@@ -152,6 +152,9 @@ export PATH="$HOME/Applications/kotlin-native-prebuilt-macos-aarch64-2.4.21/bin:
 # syntax highlighting should be the last line of zshrc file
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# OpenClaw Completion
+[ -f "$HOME/.openclaw/completions/openclaw.zsh" ] && source "$HOME/.openclaw/completions/openclaw.zsh"
+
 #sfw
 
 export SFW_SILENT=true

@@ -119,6 +119,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+# java 
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21/
+# java end
+# android
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# android end
 
 
 export EDITOR="nvim"
@@ -137,6 +144,10 @@ export PATH="$HOME/Library/Application Support/pear/bin:$PATH"
 # . "$HOME/.cargo/env"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# Kotlin
+export PATH="$HOME/Applications/kotlin-native-prebuilt-macos-aarch64-2.4.21/bin:$PATH"
+# Kotlin end
 
 # syntax highlighting should be the last line of zshrc file
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
